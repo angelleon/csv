@@ -136,38 +136,38 @@ impl Automata {
         const EOF: i16 = -5; // End Of File
         const EOL: i16 = -6; // End Of File
         const MATR: [[i16; 11]; 14] = [
-            // TODO: quitar 1
-            //   0   1    2    3    4    5    6    7    8    9   10
-            // SEP   D    e    .    -    "    '  EOL  EOF  LAM,  WS
-            [SEP, 2, 12, 12, 12, 8, 10, EOL, EOF, 12, 0], //  0
+        // TODO: quitar 1
+        //     0    1    2    3    4    5    6    7    8    9   10
+        //   SEP    D    e    .    -    "    '  EOL  EOF  LAM,  WS
+            [SEP,   2,  12,  12,   2,   8,  10, EOL, EOF,  12,   0], //  0
             [SEP, SEP, SEP, SEP, SEP, SEP, SEP, SEP, SEP, SEP, SEP], //  1
-            [I, 2, S, 3, S, S, S, I, I, S, I],            //  2
-            [S, 4, S, S, S, S, S, S, S, S, S],            //  3
-            [F, 4, 5, S, S, S, S, F, F, S, F],            //  4
-            [S, 7, S, S, 6, S, S, S, S, S, S],            //  5
-            [S, 7, S, S, S, S, S, S, S, S, S],            //  6
-            [F, 7, S, S, S, S, S, F, F, S, F],            //  7
-            [9, 9, 9, 9, 9, S, S, S, S, 9, 9],            //  8
-            [9, 9, 9, 9, 9, 13, 9, S, S, 9, 9],           //  9
-            [11, 11, 11, 11, 11, 11, 11, S, S, 11, 11],   // 10
-            [11, 11, 11, 11, 11, 11, 13, S, S, 11, 11],   // 11
-            [S, 12, 12, 12, 12, 12, 12, S, S, 12, 12],    // 12
-            [S, S, S, S, S, S, S, S, S, S, S],            // 13
-                                                          //  0    1    2    3    4    5    6    7    8    9
+            [  I,   2,  13,   3,  13,  13,  13,   I,   I,  13,   I], //  2
+            [  S,   4,   S,   S,   S,   S,   S,   S,   S,   S,   S], //  3
+            [  F,   4,   5,   S,   S,   S,   S,   F,   F,   S,   F], //  4
+            [  S,   7,   S,   S,   6,   S,   S,   S,   S,   S,   S], //  5
+            [  S,   7,   S,   S,   S,   S,   S,   S,   S,   S,   S], //  6
+            [  F,   7,   S,   S,   S,   S,   S,   F,   F,   S,   F], //  7
+            [  9,   9,   9,   9,   9,   S,   S,   S,   S,   9,   9], //  8
+            [  9,   9,   9,   9,   9,  13,   9,   S,   S,   9,   9], //  9
+            [ 11,  11,  11,  11,  11,  11,  11,   S,   S,  11,  11], // 10
+            [ 11,  11,  11,  11,  11,  11,  13,   S,   S,  11,  11], // 11
+            [  S,  12,  12,  12,  12,  12,  12,   S,   S,  12,  12], // 12
+            [  S,  13,  13,  13,  13,  13,  13,   S,   S,  13,  13], // 13
+        //     0    1    2    3    4    5    6    7    8    9
         ];
         let i = state as usize;
         match c {
             "\u{09}" | "\u{20}" | "\u{a0}" => MATR[i][10 as usize],
-            "," => MATR[i][0 as usize],
-            "e" => MATR[i][2 as usize],
-            "." => MATR[i][3 as usize],
-            "-" => MATR[i][4 as usize],
-            "\"" => MATR[i][5 as usize],
-            "'" => MATR[i][6 as usize],
-            "\n" => MATR[i][7 as usize],
-            "\r" => MATR[i][7 as usize],
-            "\r\n" => MATR[i][7 as usize],
-            "\0" => MATR[i][8 as usize],
+            "," => MATR[i][0usize],
+            "e" => MATR[i][2usize],
+            "." => MATR[i][3usize],
+            "-" => MATR[i][4usize],
+            "\"" => MATR[i][5usize],
+            "'" => MATR[i][6usize],
+            "\n" => MATR[i][7usize],
+            "\r" => MATR[i][7usize],
+            "\r\n" => MATR[i][7usize],
+            "\0" => MATR[i][8usize],
             _ => {
                 if c.parse::<u8>().is_ok() {
                     MATR[i][1 as usize]
