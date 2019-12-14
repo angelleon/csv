@@ -45,21 +45,23 @@ impl Display for Token {
     }
 }
 
+#[allow(non_snake_case)]
 pub fn printTknVec(v: &Vec<Token>) {
-    print!("{{");
+    print!("{{\n");
     for tkn in v {
-        print!("{}, ", &tkn);
+        print!("\t{}, ", &tkn);
     }
     println!("}}");
 }
 
+#[allow(non_snake_case)]
 pub fn dbgTknVec(v: &Vec<Token>) {
     let mut i: usize = 0;
     let len = v.len();
     print!("Token vector ({}) ", len);
-    print!("{{");
+    print!("{{\n");
     for tkn in v {
-        print!("{} ", &tkn);
+        print!("\t{} ", &tkn);
         match &tkn {
             Token::INT(i) => print!("{}, ", &i),
             Token::FLOAT(f) => print!("{}, ", &f),
