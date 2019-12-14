@@ -14,7 +14,7 @@
 					</to>
 				</fsa_trans>
 				<fsa_trans>
-					<input>D</input>
+					<input>-D</input>
 					<from>
 						<name>q0</name>
 						<id>0</id>
@@ -660,7 +660,7 @@
 				<to>2</to>
 				<point>
 					<x>77.86122180789603</x>
-					<y>244.87557651265624</y>
+					<y>244.8755765126562</y>
 				</point>
 			</control_point>
 			<control_point>
